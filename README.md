@@ -1,5 +1,4 @@
-# seedlab
-
+# Seedlab Solutions
 
 ```c
 function fancyAlert(arg) {
