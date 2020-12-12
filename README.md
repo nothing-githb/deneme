@@ -1,9 +1,14 @@
 # Seedlab Solutions
 
-```c
-function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
-  }
-}
+## Lab Environment
+
+Use the official [seedlab](https://seedsecuritylabs.org/lab_env.html) site to install virtual machines.
+
+
+## Usage
+
+Compile and run C codes:
+```bash
+gcc task.c  o task -lcrypto
+./task
 ```
