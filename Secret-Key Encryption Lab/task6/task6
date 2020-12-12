@@ -1,0 +1,9 @@
+openssl enc  -aes-128-cbc -e -in task6.txt -out output.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+
+openssl enc  -aes-128-cbc -e -in task6.txt -out output2.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+
+openssl enc  -aes-128-cbc -e -in task6.txt -out output3.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060709
+
+openssl enc  -aes-128-cbc  -e -in p2 -out c2 -K 00112233445566778899aabbccddeeff -iv 31323334353637383930313233343537
+
+openssl enc  -aes-128-cbc  -d -in c1 -out p1 -K 00112233445566778899aabbccddeeff -iv 31323334353637383930313233343536

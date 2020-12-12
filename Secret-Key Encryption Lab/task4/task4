@@ -1,0 +1,41 @@
+rm o* e* f* d* c*
+
+echo -n "12345" > f1.txt
+echo -n "1234567891" > f2.txt
+echo -n "1234567891234567" > f3.txt
+
+openssl enc -aes-128-cbc -e -in f1.txt -out enc_cbc_f1.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+openssl enc -aes-128-cbc -e -in f2.txt -out enc_cbc_f2.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+openssl enc -aes-128-cbc -e -in f3.txt -out enc_cbc_f3.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+
+openssl enc -aes-128-cbc -d -in enc_cbc_f1.bin -out dec_cbc_1.txt -K 00112233445566778889aabbccddeeff -iv 0102030405060708 -nopad
+openssl enc -aes-128-cbc -d -in enc_cbc_f2.bin -out dec_cbc_2.txt -K 00112233445566778889aabbccddeeff -iv 0102030405060708 -nopad
+openssl enc -aes-128-cbc -d -in enc_cbc_f3.bin -out dec_cbc_3.txt -K 00112233445566778889aabbccddeeff -iv 0102030405060708 -nopad
+
+openssl enc -aes-128-ecb -e -in f1.txt -out enc_ecb_f1.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+openssl enc -aes-128-ecb -e -in f2.txt -out enc_ecb_f2.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+openssl enc -aes-128-ecb -e -in f3.txt -out enc_ecb_f3.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+
+openssl enc -aes-128-ecb -d -in enc_ecb_f1.bin -out dec_ecb_1.txt -K 00112233445566778889aabbccddeeff -iv 0102030405060708 -nopad
+openssl enc -aes-128-ecb -d -in enc_ecb_f2.bin -out dec_ecb_2.txt -K 00112233445566778889aabbccddeeff -iv 0102030405060708 -nopad
+openssl enc -aes-128-ecb -d -in enc_ecb_f3.bin -out dec_ecb_3.txt -K 00112233445566778889aabbccddeeff -iv 0102030405060708 -nopad
+
+openssl enc -aes-128-cfb -e -in f1.txt -out enc_cfb_f1.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+openssl enc -aes-128-cfb -e -in f2.txt -out enc_cfb_f2.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+openssl enc -aes-128-cfb -e -in f3.txt -out enc_cfb_f3.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+
+openssl enc -aes-128-cfb -d -in enc_cfb_f1.bin -out dec_cfb_1.txt -K 00112233445566778889aabbccddeeff -iv 0102030405060708 -nopad
+openssl enc -aes-128-cfb -d -in enc_cfb_f2.bin -out dec_cfb_2.txt -K 00112233445566778889aabbccddeeff -iv 0102030405060708 -nopad
+openssl enc -aes-128-cfb -d -in enc_cfb_f3.bin -out dec_cfb_3.txt -K 00112233445566778889aabbccddeeff -iv 0102030405060708 -nopad
+
+openssl enc -aes-128-ofb -e -in f1.txt -out enc_ofb_f1.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+openssl enc -aes-128-ofb -e -in f2.txt -out enc_ofb_f2.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+openssl enc -aes-128-ofb -e -in f3.txt -out enc_ofb_f3.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+
+openssl enc -aes-128-ofb -d -in enc_ofb_f1.bin -out dec_ofb_1.txt -K 00112233445566778889aabbccddeeff -iv 0102030405060708 -nopad
+openssl enc -aes-128-ofb -d -in enc_ofb_f2.bin -out dec_ofb_2.txt -K 00112233445566778889aabbccddeeff -iv 0102030405060708 -nopad
+openssl enc -aes-128-ofb -d -in enc_ofb_f3.bin -out dec_ofb_3.txt -K 00112233445566778889aabbccddeeff -iv 0102030405060708 -nopad
+
+ls -la
+
+xxd -g 1 dec_cbc_1.txt

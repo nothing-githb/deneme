@@ -1,0 +1,8 @@
+openssl enc -aes-128-cbc -e -in words.txt -out cipher1.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+openssl enc -aes-128-ecb -e -in words.txt -out cipher2.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+openssl enc -aes-256-ofb -e -in words.txt -out cipher3.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+
+
+openssl enc -aes-128-cbc -d -in cipher1.bin -out decipher1.txt -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+openssl enc -aes-128-ecb -d -in cipher2.bin -out decipher2.txt -K 00112233445566778889aabbccddeeff -iv 0102030405060708
+openssl enc -aes-256-ofb -d -in cipher3.bin -out decipher3.txt -K 00112233445566778889aabbccddeeff -iv 0102030405060708
